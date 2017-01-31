@@ -11,11 +11,12 @@ import pytz
 def checkOpenClose(location,zone):
     UTCtime = datetime.datetime.now(tz=pytz.UTC)
     localtime = UTCtime.astimezone(pytz.timezone(zone)).hour
-    if localtime >= 9 and localtime <=9:
+    if localtime >= 9 and localtime <= 21:
         print location + " : Open"
     else:
         print location+ " : Closed"
-    
+
+checkOpenClose('Portland','US/Pacific')
 checkOpenClose('NYC','US/Eastern')
 checkOpenClose('London','Europe/London')
                
